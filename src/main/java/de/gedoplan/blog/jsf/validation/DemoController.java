@@ -25,6 +25,8 @@ public class DemoController implements Serializable {
     Validator validator;
 
     public String submit() {
+        // pragmatische Lösung über Aufruf Validierung bei Submit
+        // Nachteil: die fehlerhaften Daten sind bereits im Model
         Set<ConstraintViolation<DemoModel>> violations = validator.validate(model);
         if (!violations.isEmpty()) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(violations.iterator().next().getMessage()));
