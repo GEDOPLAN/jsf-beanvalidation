@@ -1,0 +1,8 @@
+.input{
+    display: block;
+}
+
+.input label{
+    display: inline-block;
+    min-width: 10vw;
+}
